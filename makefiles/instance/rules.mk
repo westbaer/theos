@@ -84,6 +84,8 @@ ifneq ($$(_THEOS_CODESIGN_COMMANDLINE),)
 endif
 endef
 
+.SUFFIXES:
+
 .SUFFIXES: .m .mm .c .cc .cpp .xm
 
 $(THEOS_OBJ_DIR)/%.m.$(THEOS_CURRENT_INSTANCE).o: %.m
