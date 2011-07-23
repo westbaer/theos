@@ -27,3 +27,5 @@ endif
 
 internal-tweak-stage_:: $(_EXTRA_TARGET) internal-library-stage_
 	$(ECHO_NOTHING)if [ -f $(THEOS_CURRENT_INSTANCE).plist ]; then cp $(THEOS_CURRENT_INSTANCE).plist "$(THEOS_STAGING_DIR)$(LOCAL_INSTALL_PATH)/"; fi$(ECHO_END)
+
+$(eval $(call __mod,instance/tweak.mk))
