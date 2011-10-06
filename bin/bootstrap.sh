@@ -112,6 +112,9 @@ void MSHookFunction(void *symbol, void *replace, void **result);
 void *MSFindSymbol(const void *image, const char *name);
 MSImageRef MSGetImageByName(const char *file);
 
+#define MSInitialize \
+    __attribute__((constructor)) static void _MSInitialize(void)
+
 #ifdef __APPLE__
 #ifdef __arm__
 IMP MSHookMessage(Class _class, SEL sel, IMP imp, const char *prefix = NULL);
